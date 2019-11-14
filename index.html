@@ -5,14 +5,23 @@
 </head>
 
 <body>
-  <h1>l33t</h1>
-  <hr>
-  <form>
-  <input type="text" id="textbox"/>
-  <input type="submit"/>
-  </form>
-  <hr>
-  (c) 1994. All rights reserved.  
+  <button onclick="getLocation()">Click Me</button>
+  <p id="demo"></p>
+  
+  <script>
+  var x = document.getElementbyId("demo");
+  function getLocation() {
+    if (navigator.getLocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not support by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+  }
+ </script>
+  
 </body>
-
 </html>
