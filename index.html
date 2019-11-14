@@ -1,15 +1,12 @@
 <html>
   <title>Cole's Website</title>
   
-<head>
-</head>
-
 <body>
   <button onclick="getLocation()">Click Me</button>
   <p id="demo"></p>
   
   <script>
-  var x = document.getElementbyId("demo");
+  var x = document.getElementById("demo");
   function getLocation() {
     if (navigator.getLocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
